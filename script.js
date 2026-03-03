@@ -1,6 +1,6 @@
 // YouTube hero: force muted autoplay via IFrame API (avoids thumbnail-only + audio issues)
 (function () {
-  var videoId = "UuXy-jkGTh4";
+  var videoId = "3l00_yJ6STg";
   var container = document.getElementById("hero-youtube-player");
   if (container && container.dataset.videoId) {
     videoId = container.dataset.videoId;
