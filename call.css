@@ -1,9 +1,10 @@
-/* Performance Call Landing Page — minimal, premium, mobile-first */
+/* Performance Call Landing Page — minimal, premium, dynamic scroll */
 :root {
   --call-black: #0a0a0a;
   --call-white: #ffffff;
   --call-green: #0f3d2e;
   --call-green-light: #1a5c44;
+  --call-green-tint: rgba(15, 61, 46, 0.04);
   --call-gray: #525252;
   --call-gray-light: #737373;
   --call-space: 1.5rem;
@@ -55,6 +56,34 @@ body {
   min-height: 100vh;
 }
 
+/* Scroll-triggered fade-in */
+.call-animate {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.6s ease-out, transform 0.5s ease-out;
+}
+
+.call-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero always visible on load; no wait for observer */
+.call-hero.call-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section labels (small caps above headlines) */
+.call-section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--call-green);
+  margin: 0 0 0.75rem;
+}
+
 /* Section spacing */
 .call-section {
   padding: var(--call-space-xl) var(--call-space);
@@ -72,12 +101,23 @@ body {
 .call-hero {
   padding: 4rem var(--call-space) 5rem;
   text-align: center;
+  background: linear-gradient(180deg, var(--call-green-tint) 0%, var(--call-white) 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 @media (min-width: 768px) {
   .call-hero {
     padding: 6rem var(--call-space-lg) 7rem;
   }
+}
+
+.call-hero-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--call-green);
+  margin: 0 0 1rem;
 }
 
 .call-hero-inner {
@@ -124,7 +164,11 @@ body {
 
 /* ----- TWO PILLARS ----- */
 .call-pillars {
-  background: #fafafa;
+  background: var(--call-white);
+}
+
+.call-pillars .call-section-label {
+  margin-bottom: 1rem;
 }
 
 .call-pillars-grid {
@@ -185,6 +229,15 @@ body {
 }
 
 /* ----- PROBLEM ----- */
+.call-problem {
+  background: #f8f9f8;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.call-problem .call-section-label {
+  margin-bottom: 0.5rem;
+}
+
 .call-problem .call-section-headline {
   margin-bottom: 1.5rem;
 }
@@ -207,7 +260,12 @@ body {
 
 /* ----- BOOKING ----- */
 .call-booking {
-  background: #fafafa;
+  background: var(--call-white);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.call-booking .call-section-label {
+  margin-bottom: 0.5rem;
 }
 
 .call-section-headline {
@@ -236,7 +294,7 @@ body {
   border-radius: 0.5rem;
   overflow: hidden;
   background: var(--call-white);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
 .call-embed-iframe {
@@ -257,6 +315,15 @@ body {
 }
 
 /* ----- AUTHORITY ----- */
+.call-authority {
+  background: #f8f9f8;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.call-authority .call-section-label {
+  margin-bottom: 0.5rem;
+}
+
 .call-authority-inner {
   display: grid;
   gap: var(--call-space-lg);
@@ -272,10 +339,11 @@ body {
 
 .call-authority-image {
   aspect-ratio: 1;
-  background: #e5e5e5;
+  background: linear-gradient(145deg, #e8e8e8 0%, #d8d8d8 100%);
   border-radius: 0.5rem;
   width: 100%;
   max-width: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .call-authority-bio p {
@@ -292,6 +360,12 @@ body {
 .call-final {
   text-align: center;
   padding-bottom: var(--call-space-2xl);
+  background: linear-gradient(180deg, var(--call-white) 0%, var(--call-green-tint) 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.call-final .call-section-label {
+  margin-bottom: 0.5rem;
 }
 
 .call-final .call-section-headline {

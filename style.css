@@ -469,12 +469,28 @@ a {
   justify-content: flex-start;
 }
 
-/* Schedule block right side — Brum Eats style: vertical stack, green separators */
+/* Schedule block right side — Brum Eats style: badge above, then vertical stack, green separators */
 .hero-schedule-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.hero-schedule-desktop-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--green);
+  margin: 0;
+}
+
+.hero-schedule-block-inner {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  flex-shrink: 0;
 }
 
 .schedule-line {
@@ -538,7 +554,7 @@ a {
 @media (max-width: 699px) {
   .hero-schedule-mobile {
     display: block;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     text-align: left;
   }
 
@@ -1028,15 +1044,7 @@ a {
   color: var(--green);
 }
 
-.footer-location {
-  display: inline;
-}
-
 @media (max-width: 767px) {
-  .footer-location {
-    display: none;
-  }
-
   .nav,
   .header-cta {
     display: none !important;
