@@ -530,20 +530,16 @@ a {
   color: var(--gray-light);
 }
 
-/* Mobile-only schedule (between CTA and scroll-hint) */
+/* Mobile-only: "Latest tips & drills" + schedule, locked under CTA buttons, left-aligned */
 .hero-schedule-mobile {
   display: none;
 }
 
 @media (max-width: 699px) {
   .hero-schedule-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 0 1.5rem 1.25rem;
-    position: relative;
-    z-index: 2;
+    display: block;
+    margin-top: 1.5rem;
+    text-align: left;
   }
 
   .hero-schedule-mobile-badge {
