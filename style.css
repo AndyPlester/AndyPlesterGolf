@@ -991,16 +991,25 @@ a {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.footer-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .footer-logo {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1rem;
 }
 
 .footer-pga-logo {
-  display: block;
-  margin: 0 auto 1rem;
   height: auto;
   max-height: 48px;
   width: auto;
