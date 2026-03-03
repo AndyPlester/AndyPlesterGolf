@@ -998,6 +998,16 @@ a {
   margin-bottom: 1rem;
 }
 
+.footer-pga-logo {
+  display: block;
+  margin: 0 auto 1rem;
+  height: auto;
+  max-height: 48px;
+  width: auto;
+  max-width: 120px;
+  opacity: 0.9;
+}
+
 .logo-img {
   width: 56px;
   height: 56px;

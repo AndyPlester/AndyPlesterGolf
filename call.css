@@ -232,8 +232,29 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .call-pillars {
+    text-align: center;
+  }
+
   .call-pillars-grid {
-    gap: 4rem;
+    gap: 3rem;
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 2.5rem;
+    background: var(--call-white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 12px rgba(15, 61, 46, 0.08);
+  }
+
+  .call-pillars-unify,
+  .call-pillars-unify-sub {
+    text-align: center;
+  }
+
+  .call-pillars-unify-sub {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -283,6 +304,16 @@ body {
 .call-problem {
   background: var(--call-white);
   border-top: 1px solid rgba(15, 61, 46, 0.08);
+  text-align: center;
+}
+
+.call-problem .call-section-label,
+.call-problem .call-section-headline,
+.call-problem-copy,
+.call-problem .call-problem-cta,
+.call-problem .call-booking-note {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .call-problem .call-problem-cta {
@@ -293,8 +324,6 @@ body {
 
 .call-problem .call-booking-note {
   margin-top: 0.5rem;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .call-problem .call-section-label {
@@ -308,6 +337,7 @@ body {
 
 .call-problem-copy {
   max-width: 36rem;
+  text-align: left;
 }
 
 @media (min-width: 1024px) {
