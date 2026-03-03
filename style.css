@@ -718,17 +718,6 @@ a {
   max-width: 38rem;
 }
 
-/* Updates signup — separate from confidence call CTA */
-.updates-signup {
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 0.75rem;
-}
-
-.updates-lead {
-  color: var(--gray-light);
-  margin: 0 0 1.25rem;
-  max-width: 36rem;
-}
 
 .drills-benefits {
   list-style: none;
