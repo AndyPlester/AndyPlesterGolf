@@ -253,8 +253,8 @@ body {
 }
 
 .call-cta-hero:hover {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--call-green);
+  background: var(--call-green);
+  color: var(--call-white);
 }
 
 /* ----- TWO PILLARS ----- */
