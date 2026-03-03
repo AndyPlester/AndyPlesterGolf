@@ -322,10 +322,20 @@ body {
 .call-booking {
   background: linear-gradient(180deg, rgba(15, 61, 46, 0.06) 0%, rgba(15, 61, 46, 0.04) 100%);
   border-top: 2px solid var(--call-green);
+  text-align: center;
 }
 
-.call-booking .call-section-label {
-  margin-bottom: 0.5rem;
+.call-booking-cta {
+  margin-bottom: 1rem;
+}
+
+.call-booking-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--call-gray-light);
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .call-section-headline {
@@ -334,66 +344,6 @@ body {
   letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
   color: var(--call-black);
-}
-
-.call-booking .call-section-headline {
-  color: var(--call-green);
-}
-
-.call-booking-tz {
-  font-size: 0.9rem;
-  color: var(--call-gray-light);
-  margin: 0 0 1.5rem;
-}
-
-.call-booking-embed-note {
-  font-size: 0.95rem;
-  color: var(--call-gray);
-  margin: 0 0 1rem;
-}
-
-.call-booking-cta {
-  margin-bottom: 2rem;
-}
-
-.call-booking-embed {
-  margin-top: 0;
-  min-height: 600px;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background: rgba(15, 61, 46, 0.04);
-  box-shadow: 0 4px 24px rgba(15, 61, 46, 0.12), 0 0 0 2px var(--call-green);
-  position: relative;
-}
-
-.call-booking-embed-no-cal {
-  min-height: 0;
-}
-
-#cal-embed {
-  min-height: 600px;
-}
-
-.call-booking-embed-no-cal #cal-embed {
-  min-height: 0;
-  padding: 0;
-}
-
-.call-embed-iframe {
-  width: 100%;
-  height: 600px;
-  border: 0;
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .call-booking-embed {
-    min-height: 650px;
-  }
-
-  .call-embed-iframe {
-    height: 650px;
-  }
 }
 
 /* ----- AUTHORITY ----- */
