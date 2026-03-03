@@ -548,7 +548,7 @@ a {
   color: var(--gray-light);
 }
 
-/* Mobile-only: "Latest tips & drills" + schedule, locked under CTA buttons, left-aligned */
+/* Mobile-only: "New videos every" + schedule, locked under CTA buttons, left-aligned */
 .hero-schedule-mobile {
   display: none;
 }
@@ -1071,7 +1071,7 @@ a {
   }
 
   .hero-body {
-    padding: 2.5rem 1.5rem 1.5rem;
+    padding: 5.5rem 1.5rem 1.5rem;
   }
 
   .hero-content {
