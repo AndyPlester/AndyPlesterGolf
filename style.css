@@ -1005,13 +1005,15 @@ a {
 
 @media (max-width: 767px) {
   .footer-logos {
+    flex-direction: column;
     flex-wrap: nowrap;
     gap: 1rem;
     max-width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   .footer-pga-logo {
-    margin-left: auto;
     max-width: 80px;
     max-height: 40px;
   }
