@@ -45,6 +45,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   padding: 1.25rem var(--call-space);
   border-bottom: 2px solid var(--call-green);
   background: var(--call-white);
@@ -68,6 +69,7 @@ body {
   width: auto;
   max-width: 5rem;
   object-fit: contain;
+  margin-left: auto;
 }
 
 .call-page {
