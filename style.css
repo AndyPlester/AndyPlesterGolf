@@ -363,6 +363,14 @@ a {
       transparent 35%
     );
   }
+
+  .hero-sub-desktop {
+    display: none;
+  }
+
+  .hero-sub-mobile {
+    display: block;
+  }
 }
 
 /* Brum Eats–style squares grid over the video */
@@ -414,6 +422,10 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.hero-sub-mobile {
+  display: none;
 }
 
 .hero-title {
