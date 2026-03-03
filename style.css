@@ -1003,6 +1003,20 @@ a {
   margin-right: auto;
 }
 
+@media (max-width: 767px) {
+  .footer-logos {
+    flex-wrap: nowrap;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .footer-pga-logo {
+    margin-left: auto;
+    max-width: 80px;
+    max-height: 40px;
+  }
+}
+
 .footer-logo {
   display: inline-flex;
   align-items: center;
