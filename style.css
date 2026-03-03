@@ -696,6 +696,12 @@ a {
   text-transform: uppercase;
 }
 
+@media (max-width: 699px) {
+  .section-title {
+    font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  }
+}
+
 .section-title em {
   font-style: normal;
   color: var(--green);
