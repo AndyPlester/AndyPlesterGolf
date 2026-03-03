@@ -1,4 +1,4 @@
-/* Scroll-triggered fade-in for confidence call page */
+/* Scroll-triggered fade-in for performance call page */
 (function () {
   var sections = document.querySelectorAll(".call-scroll-section");
   if (!sections.length) return;

@@ -39,7 +39,7 @@ To store leads (e.g. “Performance Call Lead”) in **MailerLite** or **Convert
 
 ## Linking from the main site
 
-When you’re ready, point the main site’s “Free confidence call” button/link to this page, for example:
+When you’re ready, point the main site’s “Free performance call” button/link to this page, for example:
 
 - `call.html` (same site)  
 - Or `https://andyplestergolf.com/call.html` if you use that structure.
