@@ -443,6 +443,16 @@ a {
   color: var(--green);
 }
 
+.hero-ambassador {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray-light);
+  margin: 0 0 1.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
 .hero-tagline {
   font-size: 1.05rem;
   color: var(--gray-light);
@@ -518,6 +528,25 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--gray-light);
+}
+
+/* Mobile-only schedule (between CTA and scroll-hint) */
+.hero-schedule-mobile {
+  display: none;
+}
+
+@media (max-width: 699px) {
+  .hero-schedule-mobile {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 1.5rem 1.25rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-schedule-mobile .schedule-stack {
+    margin: 0;
+  }
 }
 
 /* Scroll to explore — fixed at bottom of viewport */
@@ -1017,7 +1046,7 @@ a {
   }
 
   .hero-body {
-    padding: 5rem 1.5rem 4rem;
+    padding: 2.5rem 1.5rem 1.5rem;
   }
 
   .hero-content {
