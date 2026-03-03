@@ -36,7 +36,8 @@ body {
 
 .call-header {
   padding: 1.25rem var(--call-space);
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 2px solid var(--call-green);
+  background: var(--call-white);
 }
 
 .call-header-logo {
@@ -101,8 +102,8 @@ body {
 .call-hero {
   padding: 4rem var(--call-space) 5rem;
   text-align: center;
-  background: linear-gradient(180deg, var(--call-green-tint) 0%, var(--call-white) 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, rgba(15, 61, 46, 0.08) 0%, var(--call-green-tint) 40%, var(--call-white) 100%);
+  border-bottom: 1px solid rgba(15, 61, 46, 0.12);
 }
 
 @media (min-width: 768px) {
@@ -132,6 +133,16 @@ body {
   letter-spacing: -0.02em;
   margin: 0 0 1.5rem;
   color: var(--call-black);
+}
+
+.call-hero-headline::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: var(--call-green);
+  margin: 1.25rem auto 0;
+  border-radius: 2px;
 }
 
 .call-hero-sub {
@@ -164,7 +175,7 @@ body {
 
 /* ----- TWO PILLARS ----- */
 .call-pillars {
-  background: var(--call-white);
+  background: linear-gradient(180deg, var(--call-white) 0%, rgba(15, 61, 46, 0.03) 100%);
 }
 
 .call-pillars .call-section-label {
@@ -189,7 +200,9 @@ body {
   font-weight: 700;
   letter-spacing: 0.02em;
   margin: 0 0 1.25rem;
-  color: var(--call-black);
+  color: var(--call-green);
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--call-green);
 }
 
 .call-pillar-list {
@@ -230,8 +243,8 @@ body {
 
 /* ----- PROBLEM ----- */
 .call-problem {
-  background: #f8f9f8;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(15, 61, 46, 0.05);
+  border-top: 1px solid rgba(15, 61, 46, 0.1);
 }
 
 .call-problem .call-section-label {
@@ -239,6 +252,7 @@ body {
 }
 
 .call-problem .call-section-headline {
+  color: var(--call-green);
   margin-bottom: 1.5rem;
 }
 
@@ -260,8 +274,8 @@ body {
 
 /* ----- BOOKING ----- */
 .call-booking {
-  background: var(--call-white);
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, rgba(15, 61, 46, 0.06) 0%, rgba(15, 61, 46, 0.04) 100%);
+  border-top: 2px solid var(--call-green);
 }
 
 .call-booking .call-section-label {
@@ -274,6 +288,10 @@ body {
   letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
   color: var(--call-black);
+}
+
+.call-booking .call-section-headline {
+  color: var(--call-green);
 }
 
 .call-booking-tz {
@@ -293,8 +311,21 @@ body {
   min-height: 600px;
   border-radius: 0.5rem;
   overflow: hidden;
-  background: var(--call-white);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  background: rgba(15, 61, 46, 0.04);
+  box-shadow: 0 4px 24px rgba(15, 61, 46, 0.12), 0 0 0 2px var(--call-green);
+  position: relative;
+}
+
+.call-booking-embed-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  color: var(--call-gray-light);
+  text-align: center;
+  padding: 1rem;
+  pointer-events: none;
 }
 
 .call-embed-iframe {
@@ -316,8 +347,8 @@ body {
 
 /* ----- AUTHORITY ----- */
 .call-authority {
-  background: #f8f9f8;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(15, 61, 46, 0.05);
+  border-top: 1px solid rgba(15, 61, 46, 0.1);
 }
 
 .call-authority .call-section-label {
@@ -339,11 +370,15 @@ body {
 
 .call-authority-image {
   aspect-ratio: 1;
-  background: linear-gradient(145deg, #e8e8e8 0%, #d8d8d8 100%);
+  background: linear-gradient(145deg, rgba(15, 61, 46, 0.12) 0%, rgba(15, 61, 46, 0.06) 100%);
   border-radius: 0.5rem;
   width: 100%;
   max-width: 200px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 2px solid var(--call-green);
+}
+
+.call-authority .call-section-headline {
+  color: var(--call-green);
 }
 
 .call-authority-bio p {
@@ -360,12 +395,16 @@ body {
 .call-final {
   text-align: center;
   padding-bottom: var(--call-space-2xl);
-  background: linear-gradient(180deg, var(--call-white) 0%, var(--call-green-tint) 100%);
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, rgba(15, 61, 46, 0.06) 0%, rgba(15, 61, 46, 0.1) 100%);
+  border-top: 2px solid var(--call-green);
 }
 
 .call-final .call-section-label {
   margin-bottom: 0.5rem;
+}
+
+.call-final .call-section-headline {
+  color: var(--call-green);
 }
 
 .call-final .call-section-headline {
