@@ -42,6 +42,9 @@ body {
 }
 
 .call-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1.25rem var(--call-space);
   border-bottom: 2px solid var(--call-green);
   background: var(--call-white);
@@ -58,6 +61,13 @@ body {
 
 .call-header-logo:hover {
   color: var(--call-green);
+}
+
+.call-header-pga-logo {
+  height: 2rem;
+  width: auto;
+  max-width: 5rem;
+  object-fit: contain;
 }
 
 .call-page {
@@ -154,7 +164,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.78);
 }
 
 .call-hero-inner {
