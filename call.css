@@ -98,11 +98,12 @@ body {
   margin: 0 0 0.75rem;
 }
 
-/* Section spacing */
+/* Section spacing — content left-aligned by default; hero and final override to center */
 .call-section {
   padding: var(--call-space-xl) var(--call-space);
   max-width: 72rem;
   margin: 0 auto;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -233,9 +234,6 @@ body {
 @media (min-width: 1024px) {
   .call-pillars-grid {
     gap: 4rem;
-    max-width: 44rem;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -268,21 +266,17 @@ body {
 }
 
 .call-pillars-unify {
-  text-align: center;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--call-black);
-  margin: 0 0 0.5rem;
+  margin: 1.5rem 0 0.5rem;
 }
 
 .call-pillars-unify-sub {
-  text-align: center;
   font-size: 0.9rem;
   color: var(--call-gray);
   margin: 0;
-  max-width: 28rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 36rem;
 }
 
 /* ----- PROBLEM + BOOK CTA ----- */
