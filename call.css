@@ -245,6 +245,16 @@ body {
   background: var(--call-green-light);
 }
 
+.call-cta-hero {
+  background: var(--call-white);
+  color: var(--call-green);
+}
+
+.call-cta-hero:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--call-green);
+}
+
 /* ----- TWO PILLARS ----- */
 .call-pillars {
   background: var(--call-pastel);
