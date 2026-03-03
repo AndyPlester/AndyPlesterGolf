@@ -34,6 +34,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+@media (min-width: 1024px) {
+  body {
+    background: #f4f6f5;
+  }
+}
+
 .call-header {
   padding: 1.25rem var(--call-space);
   border-bottom: 2px solid var(--call-green);
@@ -55,6 +61,12 @@ body {
 
 .call-page {
   min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .call-page {
+    background: linear-gradient(90deg, rgba(15, 61, 46, 0.02) 0%, transparent 18%, transparent 82%, rgba(15, 61, 46, 0.02) 100%);
+  }
 }
 
 /* Scroll-triggered fade-in */
