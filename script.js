@@ -117,3 +117,37 @@
     onScroll();
   }
 })();
+
+// Privacy / cookie consent banner — show on first load until accepted
+(function () {
+  var STORAGE_KEY = "andyplestergolf-privacy-accepted";
+  var banner = document.getElementById("privacy-banner");
+  var acceptBtn = document.getElementById("privacy-banner-accept");
+
+  function hideBanner() {
+    if (banner) banner.setAttribute("hidden", "");
+  }
+
+  function showBanner() {
+    if (banner) banner.removeAttribute("hidden");
+  }
+
+  function accept() {
+    try {
+      localStorage.setItem(STORAGE_KEY, "true");
+    } catch (e) {}
+    hideBanner();
+  }
+
+  if (!banner) return;
+
+  try {
+    if (localStorage.getItem(STORAGE_KEY) === "true") {
+      hideBanner();
+      return;
+    }
+  } catch (e) {}
+
+  showBanner();
+  if (acceptBtn) acceptBtn.addEventListener("click", accept);
+})();

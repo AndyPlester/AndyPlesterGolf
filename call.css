@@ -306,8 +306,12 @@ body {
   margin: 0 0 1rem;
 }
 
+.call-booking-cta {
+  margin-bottom: 2rem;
+}
+
 .call-booking-embed {
-  margin-top: 1rem;
+  margin-top: 0;
   min-height: 600px;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -316,16 +320,17 @@ body {
   position: relative;
 }
 
-.call-booking-embed-placeholder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 0.9rem;
-  color: var(--call-gray-light);
-  text-align: center;
-  padding: 1rem;
-  pointer-events: none;
+.call-booking-embed-no-cal {
+  min-height: 0;
+}
+
+#cal-embed {
+  min-height: 600px;
+}
+
+.call-booking-embed-no-cal #cal-embed {
+  min-height: 0;
+  padding: 0;
 }
 
 .call-embed-iframe {
@@ -419,4 +424,76 @@ body {
   font-size: 0.85rem;
   color: var(--call-gray-light);
   margin: 0;
+}
+
+/* Privacy / cookie consent banner (same behaviour as main site) */
+.privacy-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: rgba(10, 10, 10, 0.97);
+  border-top: 1px solid rgba(15, 61, 46, 0.5);
+  padding: 1rem 1.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.privacy-banner[hidden] {
+  display: none;
+}
+
+.privacy-banner-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--call-gray-light);
+  line-height: 1.5;
+  flex: 1;
+  min-width: 200px;
+}
+
+.privacy-banner-text a {
+  color: var(--call-green);
+  text-decoration: underline;
+}
+
+.privacy-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.privacy-banner-link {
+  font-size: 0.8rem;
+  color: var(--call-gray-light);
+  text-decoration: underline;
+}
+
+.privacy-banner-link:hover {
+  color: var(--call-green);
+}
+
+.privacy-banner-accept {
+  font-family: var(--call-font);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--call-white);
+  background: var(--call-green);
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.privacy-banner-accept:hover {
+  background: var(--call-green-light);
+  transform: translateY(-1px);
 }

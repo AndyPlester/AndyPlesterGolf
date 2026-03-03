@@ -1046,6 +1046,82 @@ a {
   color: var(--green);
 }
 
+/* Privacy / cookie consent banner */
+.privacy-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: rgba(10, 10, 10, 0.97);
+  border-top: 1px solid rgba(50, 205, 50, 0.3);
+  padding: 1rem 1.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.privacy-banner[hidden] {
+  display: none;
+}
+
+.privacy-banner-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  line-height: 1.5;
+  flex: 1;
+  min-width: 200px;
+}
+
+.privacy-banner-text a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.privacy-banner-text a:hover {
+  color: var(--green-dark);
+}
+
+.privacy-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.privacy-banner-link {
+  font-size: 0.8rem;
+  color: var(--gray-light);
+  text-decoration: underline;
+}
+
+.privacy-banner-link:hover {
+  color: var(--green);
+}
+
+.privacy-banner-accept {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  background: var(--green);
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.privacy-banner-accept:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
 @media (max-width: 767px) {
   .nav,
   .header-cta {
@@ -1071,7 +1147,7 @@ a {
   }
 
   .hero-body {
-    padding: 5.5rem 1.5rem 1.5rem;
+    padding: 8rem 1.5rem 1.5rem;
   }
 
   .hero-content {

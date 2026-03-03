@@ -73,10 +73,12 @@
       <h2 class="call-section-headline">Book Your Free 15-Minute Performance Call</h2>
       <p class="call-booking-tz">All times shown in UK time. Limited slots each week.</p>
       <p class="call-booking-embed-note">Choose a 15-minute slot below. You’ll receive confirmation and a calendar invite by email.</p>
-      <div class="call-booking-embed">
-        <p class="call-booking-embed-placeholder" aria-hidden="true">Calendar loads here when you add your Cal.com or Calendly embed link.</p>
-        <!-- Replace the iframe src with your Cal.com or Calendly inline embed URL. -->
-        <iframe title="Book your performance call" class="call-embed-iframe" src="about:blank" data-embed-placeholder="Replace src with your Cal.com or Calendly embed URL"></iframe>
+      <!-- Set href below to your Cal.com or Calendly booking page (e.g. https://cal.com/yourusername/15min or your Calendly link). This is the main booking action. -->
+      <a href="https://cal.com/andyplestergolf/15min" class="call-cta call-booking-cta" id="booking-link" target="_blank" rel="noopener">Book your 15-minute call</a>
+      <div class="call-booking-embed" id="cal-embed-container" data-cal-link="andyplestergolf/15min">
+        <!-- Optional: set data-cal-link to your Cal.com link (e.g. andyplestergolf/15min) to show calendar inline. Leave empty to use the button above only. For Calendly: use the iframe below and set its src to your Calendly embed URL. -->
+        <div id="cal-embed" style="min-height: 600px;"></div>
+        <iframe title="Book your performance call" class="call-embed-iframe" id="calendly-iframe" src="about:blank" style="display: none;"></iframe>
       </div>
     </section>
 
@@ -103,6 +105,15 @@
       <p class="call-final-note">15-minute strategy calls. Limited slots each week.</p>
     </section>
   </main>
+
+  <div class="privacy-banner" id="privacy-banner" role="dialog" aria-label="Cookie and privacy notice" aria-describedby="privacy-banner-text" hidden>
+    <p class="privacy-banner-text" id="privacy-banner-text">We use cookies and similar tech to run the site and improve your experience. By continuing you accept our use of cookies. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="privacy-banner-actions">
+      <a href="privacy.html" class="privacy-banner-link">Privacy Policy</a>
+      <button type="button" class="privacy-banner-accept" id="privacy-banner-accept">Accept</button>
+    </div>
+  </div>
+
   <script src="call.js"></script>
 </body>
 </html>

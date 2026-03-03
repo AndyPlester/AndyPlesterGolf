@@ -19,3 +19,61 @@
     observer.observe(section);
   });
 })();
+
+/* Cal.com inline embed: load calendar when data-cal-link is set on #cal-embed-container */
+(function () {
+  var container = document.getElementById("cal-embed-container");
+  var embedEl = document.getElementById("cal-embed");
+  if (!container || !embedEl) return;
+
+  var calLink = (container.getAttribute("data-cal-link") || "").trim();
+  if (!calLink) {
+    embedEl.style.minHeight = "0";
+    embedEl.parentElement.classList.add("call-booking-embed-no-cal");
+    return;
+  }
+
+  var script = document.createElement("script");
+  script.src = "https://cal.com/embed.js";
+  script.async = true;
+  script.onload = function () {
+    if (typeof window.Cal !== "undefined") {
+      window.Cal("inline", { elementOrSelector: "#cal-embed", calLink: calLink });
+    }
+  };
+  document.head.appendChild(script);
+})();
+
+// Privacy / cookie consent banner — same key as main site, show until accepted
+(function () {
+  var STORAGE_KEY = "andyplestergolf-privacy-accepted";
+  var banner = document.getElementById("privacy-banner");
+  var acceptBtn = document.getElementById("privacy-banner-accept");
+
+  function hideBanner() {
+    if (banner) banner.setAttribute("hidden", "");
+  }
+
+  function showBanner() {
+    if (banner) banner.removeAttribute("hidden");
+  }
+
+  function accept() {
+    try {
+      localStorage.setItem(STORAGE_KEY, "true");
+    } catch (e) {}
+    hideBanner();
+  }
+
+  if (!banner) return;
+
+  try {
+    if (localStorage.getItem(STORAGE_KEY) === "true") {
+      hideBanner();
+      return;
+    }
+  } catch (e) {}
+
+  showBanner();
+  if (acceptBtn) acceptBtn.addEventListener("click", accept);
+})();
