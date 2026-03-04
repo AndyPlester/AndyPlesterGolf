@@ -458,6 +458,14 @@ body {
   width: 100%;
   max-width: 200px;
   border: 2px solid var(--call-green);
+  overflow: hidden;
+}
+
+.call-authority-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .call-authority .call-section-headline {
