@@ -297,27 +297,22 @@ body.udc-page {
 .udc-embed-wrap {
   margin-top: 0.5rem;
   border-radius: 0.5rem;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
 }
 
 .udc-embed-wrap[hidden] {
   display: none !important;
 }
 
+/* Tall enough that typical multi-page Google Forms fit without an inner iframe scrollbar.
+   Height can’t be read cross-origin; raise this if Google adds more fields/pages. */
 .udc-form-iframe {
   display: block;
   width: 100%;
-  min-height: clamp(520px, 82vh, 880px);
+  min-height: 3800px;
   border: 0;
   border-radius: 0.5rem;
   background: var(--white);
-}
-
-@media (min-width: 900px) {
-  .udc-form-iframe {
-    min-height: 920px;
-  }
 }
 
 .udc-native-form[hidden] {
