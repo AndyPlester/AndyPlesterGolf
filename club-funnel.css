@@ -314,6 +314,12 @@ body.udc-page {
   background: var(--white);
 }
 
+@media (max-width: 767px) {
+  .udc-form-iframe {
+    min-height: 1100px;
+  }
+}
+
 .udc-native-form[hidden] {
   display: none !important;
 }
