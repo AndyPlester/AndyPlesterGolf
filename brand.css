@@ -65,6 +65,10 @@ strong{color:var(--ink)}
 .btn-coaching:hover{background:var(--blue-dark);color:#fff}
 .btn-gold{background:var(--gold);color:#2A2410}
 .btn-gold:hover{background:#B3861F;color:#2A2410}
+.btn-white{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-white:hover{background:#fff;color:var(--green);border-color:var(--green)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:#23271F;color:#fff}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);box-shadow:none}
 .btn-ghost:hover{border-color:var(--green);color:var(--green);background:var(--green-tint)}
 .btn-ghost.on-dark{color:var(--on-dark);border-color:rgba(244,241,230,.35)}
@@ -249,6 +253,9 @@ strong{color:var(--ink)}
   transition:transform .2s ease,box-shadow .2s ease}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 .card.feature{border:2px solid var(--green);box-shadow:var(--shadow)}
+.card--white{border:2px solid #fff;box-shadow:var(--shadow)}
+.card--gold{border:2px solid var(--gold);box-shadow:var(--shadow)}
+.card--dark{border:2px solid var(--dark);box-shadow:var(--shadow)}
 .card .tier{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--gold);margin-bottom:.6rem}
 .card.feature .tier{color:var(--green)}
