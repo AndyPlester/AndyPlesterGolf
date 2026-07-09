@@ -123,7 +123,7 @@
     b.innerHTML =
       '<p class="privacy-banner-text">We use essential cookies to run the site. With your consent, we also use Google Analytics to understand how the site is used. See our <a href="privacy.html">Privacy Policy</a>.</p>' +
       '<div class="pb-actions">' +
-        '<button type="button" class="btn btn-ghost btn-sm" id="privacy-banner-reject">Reject</button>' +
+        '<button type="button" class="btn btn-ghost on-dark btn-sm" id="privacy-banner-reject">Reject</button>' +
         '<button type="button" class="btn btn-assessment btn-sm" id="privacy-banner-accept">Accept</button>' +
       '</div>';
     document.body.appendChild(b);
