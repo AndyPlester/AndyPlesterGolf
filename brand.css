@@ -280,8 +280,8 @@ strong{color:var(--ink)}
   overflow:hidden;transition:transform .2s ease,border-color .2s ease}
 .stage-card:hover{transform:translateY(-4px);border-color:var(--sc,var(--gold))}
 .stage-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--sc,var(--gold));z-index:2}
-.stage-pic{aspect-ratio:16/10;background-image:url(four-stages.jpeg);background-size:400% auto;
-  background-repeat:no-repeat;background-position:var(--px,0%) 55%;border-bottom:1px solid rgba(244,241,230,.16)}
+.stage-pic{display:block;width:100%;height:auto;
+  border-bottom:1px solid rgba(244,241,230,.16)}
 .stage-body{padding:1.4rem 1.35rem 1.5rem}
 .stage-card .sc-num{display:inline-flex;align-items:center;justify-content:center;width:2.6rem;height:2.6rem;
   border-radius:50%;background:var(--sc,var(--gold));color:#0E120C;font-family:var(--font-display);
