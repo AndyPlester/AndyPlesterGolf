@@ -92,20 +92,64 @@
   els.forEach(function (e) { io.observe(e); });
 })();
 
-// Cookie / privacy banner
+// Cookie consent + consent-gated Google Analytics (GA4).
+// GA is NOT loaded until the visitor clicks Accept. Reject = no analytics cookies.
 (function () {
-  var KEY = "udsystem-privacy-accepted";
-  var banner = document.getElementById("privacy-banner");
-  var accept = document.getElementById("privacy-banner-accept");
-  if (!banner) return;
-  try {
-    if (localStorage.getItem(KEY) === "true") { banner.setAttribute("hidden", ""); return; }
-  } catch (e) {}
-  banner.removeAttribute("hidden");
-  if (accept) accept.addEventListener("click", function () {
-    try { localStorage.setItem(KEY, "true"); } catch (e) {}
-    banner.setAttribute("hidden", "");
+  var KEY = "uds-consent";           // "accepted" | "rejected"
+  var GA_ID = "G-MDRBPBXDRX";
+
+  function loadGA() {
+    if (window.__udsGA) return;
+    window.__udsGA = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID, { anonymize_ip: true });
+  }
+
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+
+  function buildBanner() {
+    var b = document.createElement("div");
+    b.className = "privacy-banner";
+    b.id = "privacy-banner";
+    b.setAttribute("role", "dialog");
+    b.setAttribute("aria-label", "Cookie notice");
+    b.innerHTML =
+      '<p class="privacy-banner-text">We use essential cookies to run the site. With your consent, we also use Google Analytics to understand how the site is used. See our <a href="privacy.html">Privacy Policy</a>.</p>' +
+      '<div class="pb-actions">' +
+        '<button type="button" class="btn btn-ghost btn-sm" id="privacy-banner-reject">Reject</button>' +
+        '<button type="button" class="btn btn-assessment btn-sm" id="privacy-banner-accept">Accept</button>' +
+      '</div>';
+    document.body.appendChild(b);
+    b.querySelector("#privacy-banner-accept").addEventListener("click", function () {
+      write("accepted"); loadGA(); b.remove();
+    });
+    b.querySelector("#privacy-banner-reject").addEventListener("click", function () {
+      write("rejected"); b.remove();
+    });
+  }
+
+  function openBanner() { if (!document.getElementById("privacy-banner")) buildBanner(); }
+
+  var state = read();
+  if (state === "accepted") {
+    loadGA();
+  } else if (state !== "rejected") {
+    openBanner();
+  }
+
+  // "Cookie settings" links (any element with data-cookie-settings) re-open the choice
+  document.addEventListener("click", function (e) {
+    var t = e.target && e.target.closest ? e.target.closest("[data-cookie-settings]") : null;
+    if (t) { e.preventDefault(); openBanner(); }
   });
+  window.udsCookieSettings = openBanner;
 })();
 
 // Approximate local-currency estimate next to USD prices.
