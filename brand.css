@@ -51,7 +51,7 @@ strong{color:var(--ink)}
 .center .gold-rule{margin-left:auto;margin-right:auto}
 
 /* ---------- buttons ---------- */
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-sans);
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:.5rem;font-family:var(--font-sans);
   font-weight:700;font-size:.95rem;letter-spacing:.01em;line-height:1;
   padding:.9rem 1.5rem;border-radius:var(--radius);border:2px solid transparent;
   cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s ease,color .2s;
@@ -151,7 +151,7 @@ strong{color:var(--ink)}
 .hero-venue a{color:var(--green);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:560px){
   .hero-cta,.hero-modes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.6rem}
-  .hero-cta .btn,.hero-modes .btn{display:block;width:auto;min-width:0;text-align:center;padding:.8rem .5rem;font-size:.8rem;line-height:1.25;white-space:normal;overflow-wrap:break-word}
+  .hero-cta .btn,.hero-modes .btn{display:flex;align-items:center;justify-content:center;min-width:0;text-align:center;padding:.8rem .5rem;font-size:.8rem;line-height:1.25;white-space:normal;overflow-wrap:break-word}
 }
 .cards-note a{color:var(--green);font-weight:600;text-decoration:underline}
 .hero-media{position:relative}
