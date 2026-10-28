@@ -88,6 +88,7 @@ strong{color:var(--ink)}
 .brand-lockup:hover{text-decoration:none}
 .brand-badge{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none;
   box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.brand-badge--ap{width:52px;height:52px;object-fit:contain;border-radius:50%;box-shadow:none}
 .brand-text{display:flex;flex-direction:column;line-height:1.05}
 .brand-name{font-family:var(--font-sans);font-weight:800;font-size:.95rem;
   letter-spacing:.015em;text-transform:uppercase;color:var(--ink);line-height:1}
@@ -256,6 +257,31 @@ strong{color:var(--ink)}
 .cards{display:grid;gap:1.25rem;grid-template-columns:1fr}
 @media(min-width:600px){.cards{grid-template-columns:1fr 1fr}}
 @media(min-width:1000px){.cards{grid-template-columns:1.15fr 1fr 1fr 1fr;align-items:stretch}}
+.cards--three{max-width:66rem;margin-left:auto;margin-right:auto}
+@media(min-width:1000px){.cards.cards--three{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+.featured-plan{transform:translateY(-.45rem)}
+.featured-plan:hover{transform:translateY(-.7rem)}
+.section-cta{margin-top:2.25rem}
+.cta-panel{background:var(--green-deep);color:var(--on-dark);border-radius:var(--radius-l);padding:clamp(2rem,5vw,4rem);text-align:center}
+.cta-panel h2{color:var(--on-dark);font-size:clamp(1.7rem,4vw,2.7rem);margin-bottom:.75rem}
+.cta-panel p{max-width:42rem;margin:0 auto 1.5rem;color:var(--on-dark-soft)}
+.hero--coaching .hero-copy{opacity:1;transform:none}
+.final-cta{padding-top:0}
+.book-cover img{width:100%;height:auto;object-fit:contain}
+.footer{background:var(--green-deep);color:var(--on-dark);padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}
+.footer-grid strong{display:block;color:#fff;margin-bottom:.65rem}
+.footer-grid p{color:var(--on-dark-soft);max-width:24rem}
+.footer-grid a{display:block;color:var(--on-dark-soft);margin:.4rem 0}
+.footer .footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:2rem;padding-top:1rem;color:var(--on-dark-soft);font-size:.85rem}
+@media(max-width:640px){
+  .brand-text{display:none}
+  .brand-badge--ap{width:44px;height:44px}
+  .featured-plan{transform:none}
+  .featured-plan:hover{transform:translateY(-4px)}
+  .book-cover{max-width:15rem;margin-inline:auto}
+  .footer-grid{grid-template-columns:1fr}
+}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-l);
   box-shadow:var(--shadow-sm);padding:1.6rem 1.4rem;display:flex;flex-direction:column;
   transition:transform .2s ease,box-shadow .2s ease}
