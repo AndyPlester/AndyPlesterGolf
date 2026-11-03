@@ -1,4 +1,4 @@
-/* The Up & Down System — shared site behaviour */
+/* Andy Plester Golf — shared site behaviour */
 
 // Header background on scroll
 (function () {
