@@ -220,6 +220,38 @@ strong{color:var(--ink)}
 .book-meta .tag{background:var(--surface);border:1px solid var(--line);border-radius:var(--pill);
   padding:.25rem .7rem;font-weight:600;color:var(--ink-soft)}
 
+/* ---------- book page ---------- */
+.book-page #clear{scroll-margin-top:calc(var(--header-h) + 1rem)}
+.book-page .hero-grid{grid-template-columns:minmax(0,1fr)}
+.book-page .hero h1{font-size:clamp(2.1rem,5vw,3.65rem);max-width:46rem}
+.book-page .hero-sub{margin-bottom:.75rem}
+.book-intro{max-width:36rem;margin:0 0 1.25rem;color:var(--ink-soft)}
+.clear-process{display:grid;gap:.8rem;max-width:44rem;margin:0 auto}
+.book-learning-grid{display:grid;grid-template-columns:1fr;gap:1rem;max-width:66rem;margin:0 auto}
+.book-learning-grid .card{padding:1.4rem}
+.book-learning-grid .card h3{margin:0 0 .55rem}
+.book-learning-grid .card p{font-size:.94rem;line-height:1.55;margin:0}
+.book-coaching-link{margin:1.35rem 0 0;color:var(--on-dark-soft);font-size:.9rem}
+.book-coaching-link a{color:var(--gold);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:680px){
+  .book-learning-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.15rem}
+}
+@media(min-width:900px){
+  .book-page .hero-grid{grid-template-columns:minmax(0,1.35fr) minmax(16rem,.65fr)}
+}
+@media(max-width:679px){
+  .book-page .hero{padding-top:calc(var(--header-h) + 1.5rem);padding-bottom:3rem}
+  .book-page .section{padding:3.5rem 0}
+  .book-page .section-head{margin-bottom:1.7rem}
+  .book-page .hero-cta{grid-template-columns:1fr}
+  .book-page .hero-cta .btn{font-size:.9rem;padding:.9rem .75rem}
+  .clear-detail{gap:.8rem;padding:1rem}
+  .clear-detail .cl-badge{width:2.15rem;height:2.15rem;font-size:1rem}
+  .clear-detail h3{font-size:1rem}
+  .clear-detail p{font-size:.9rem;line-height:1.5}
+  .book-learning-grid .card{width:100%}
+}
+
 /* ---------- trust bar ---------- */
 .skillest-proof{padding:1.4rem 0;background:var(--bg)}
 .skillest-proof-inner{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:46rem;margin:0 auto}
