@@ -231,6 +231,7 @@ strong{color:var(--ink)}
 .skillest-stat strong{display:block;color:var(--green);font-family:var(--font-display);font-size:1.4rem;line-height:1}
 .skillest-stat strong+span{display:block;margin-top:.25rem;color:var(--ink);font-size:.8rem;font-weight:700}
 .skillest-proof-note{grid-column:1/-1;margin:0;text-align:center;color:var(--ink-faint);font-size:.72rem}
+.skillest-proof-note a{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:520px){
   .skillest-proof-inner{grid-template-columns:1fr}
   .skillest-proof-note{grid-column:auto}
@@ -266,6 +267,12 @@ strong{color:var(--ink)}
 @media(max-width:640px){
   .steps{grid-template-columns:1fr;gap:1.9rem;max-width:22rem;margin-left:auto;margin-right:auto}
   .steps::before{display:none}
+}
+.assessment-section{background:linear-gradient(180deg,var(--bg),var(--green-tint))}
+.assessment-section .section-intro{max-width:40rem;margin-left:auto;margin-right:auto}
+.assessment-section .section-cta .btn{min-height:3.25rem}
+@media(max-width:560px){
+  .assessment-section .section-cta .btn{width:100%}
 }
 
 /* ---------- start here cards ---------- */
