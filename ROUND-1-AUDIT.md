@@ -183,3 +183,84 @@ Accessible labels should be used instead of relying on emoji alone. On failure, 
 3. Contact Skillest for an official API/widget decision; meanwhile add a premium non-numeric link to current Skillest proof near the top of the homepage. Add dated figures only if Andrew wants a manually reviewed snapshot.
 
 These are deliberately contained changes. Image optimisation, visible FAQs, new search pages and any server-side statistics service can follow in later rounds.
+
+## 12. Task 3 — complete link audit
+
+This audit checked every `href` in the seven HTML pages, including file destinations and same-page/cross-page anchors. External destinations could not be loaded from this workspace because public DNS access is unavailable, so the findings distinguish a correct-looking destination from a live, mobile-tested destination. A final phone test remains necessary before publication.
+
+### Results by route
+
+| Route | Current destination | Finding and action |
+|---|---|---|
+| Skillest profile and reviews | `skillest.com/coach/andyplester` | Used consistently and is the right canonical profile pattern. Keep this as the visible proof link. Live response and current review score still need verification on a phone. |
+| Free Golf Assessment | Skillest profile with `#evaluation` | Prominent across all main pages. The profile URL is consistent, but the fragment cannot prove that Skillest still opens the free assessment. Confirm that the assessment exists, is free and opens the intended item in the Skillest app and a mobile browser. |
+| Personal Golf Review | Skillest package `NYbRpT5sR65aeDj5v` | The same ID is used on Home and Coaching. Current availability, $49 price and inclusions must be checked against Skillest before publication. |
+| Performance Coaching | Skillest plan `ESWcXmhJSN8nLbb2G` | The same ID is used on Home and Coaching. Current availability, $89/month price, two lessons and three-month minimum must be checked against Skillest. |
+| Elite Performance Coaching | Skillest plan `GfDfyPRKSPhj6cGip` | The same ID is used on Home and Coaching. Current availability, $199/month price, lesson allowance and cancellation wording must be checked against Skillest. |
+| Free introductory/confidence call | No public site link | `CALENDAR_SETUP.md` describes a future call page, but `call.html` does not exist and no confirmed Cal.com/Calendly URL is present. Do not advertise this route until Andrew supplies and tests the booking URL. |
+| Instagram | `instagram.com/andyplestergolf/` | Consistent on the pages where it appears. Add to the shared footer later if this is the confirmed account. Live/mobile check outstanding. |
+| Facebook | `facebook.com/andyplestergolf/` | Consistent on the pages where it appears. Live/mobile check outstanding. |
+| TikTok | No link anywhere | Confirm whether Andy has an official account before adding one. |
+| YouTube | `youtube.com/@andyplestergolf` | Consistent; the homepage adds `?sub_confirmation=1`, while other pages open the channel normally. Prefer the normal channel URL unless an explicit subscription prompt is intended. Live/mobile check outstanding. |
+| Amazon book | `amazon.co.uk/dp/B0H3FBJCKP` | The ASIN is consistent across every page. Live product, author, edition and mobile-app opening still need checking. |
+| In-person coaching | Email to `andrewplesterpga@gmail.com` | The email address and useful pre-filled subjects are consistent. This is not a true booking system and may fail for visitors without a mail app. Retain it as a fallback after a confirmed booking route is added. |
+| Venue map | Google Maps search for Ullesthorpe Court Golf Club | Likely to open on mobile, but it is a search query rather than a stable place link and uses the older venue wording. Replace later with the confirmed Google Maps place/share link. |
+| Club waiting list | Web3Forms submission | This is the only contact form. It collects name, email, handicap, location and marketing consent for a paused offer; it should not remain the site's active enquiry mechanism. |
+
+All internal file links resolve. Four links on `up-and-down-club.html` are broken because `index.html` has no `#system` or `#connect` section. The paused Club page also has no H1 and its meta description is 159 characters. No other missing internal page or anchor was found.
+
+### Link priority corrections
+
+1. Verify the free assessment and three current offers while signed out, in both a phone browser and the Skillest app. Treat the resulting Skillest display as the only authority for price and inclusions; do not alter anything inside Skillest.
+2. Confirm the introductory-call URL, TikTok account and stable venue link before placing them on the site.
+3. Retire or simplify the paused Club page and stop its form from collecting new waiting-list details, subject to Andrew's approval.
+4. Add consistent shared-footer links after the destinations are verified, then repair the Club page's four broken anchors if that page remains public.
+
+## 13. Tracking, forms and conversion assessment
+
+### Current state
+
+- **Google Analytics 4:** not installed. There is no GA4 measurement ID, Google tag, Tag Manager container, `dataLayer` or event code. The security policy permits Google Analytics connections, but permission alone is not tracking. The privacy page correctly says analytics are inactive.
+- **Google Search Console:** no HTML verification tag or verification file is present. Search Console could still be verified through DNS, which cannot be established from these files, so account status must be checked in Andrew's Google account.
+- **Conversion events:** none. Skillest, assessment, plan, Amazon, email and social clicks are not distinguished or measured.
+- **Forms:** the main coaching journey has no enquiry form. The only form is the paused Club waiting list through Web3Forms. Its real delivery cannot be confirmed from static files, and a real submission should not be made merely as a test because that would send personal information.
+- **Mobile calls to action:** the free assessment is prominent in the header, mobile menu, hero and closing sections, and buttons stack/wrap responsively. The weakest mobile routes are email-only in-person enquiries and the absent free-call booking link.
+
+GA4 can reliably measure visits, traffic sources and outbound button clicks. It cannot by itself prove that a visitor completed an assessment or bought a Skillest subscription after leaving the site. Those later stages require a Skillest-supported integration, a return/confirmation page controlled by Andy, or careful aggregate reconciliation with Skillest reports. Do not describe outbound clicks as leads or subscribers.
+
+## 14. Proposed measurement solution — review before implementation
+
+Use one GA4 web data stream, owned by Andrew, with enhanced measurement reviewed to avoid duplicates. Add one site-wide Google tag only after checking the live site and Analytics account for any tag already injected outside these files. Update the privacy wording at the same time and use the least intrusive setup appropriate to the audience; do not send names, email addresses, free-text form content or Skillest customer details to Analytics.
+
+Track a small, stable set of events:
+
+| Event | Trigger | What it measures |
+|---|---|---|
+| `skillest_profile_click` | Current reviews/profile link | Interest in proof and Andy's full Skillest profile |
+| `free_assessment_click` | Any free-assessment button | Website visitors sent towards the primary offer |
+| `online_coaching_click` | Any paid package or plan button, with a non-personal `offer_name` parameter | Interest in each online coaching offer |
+| `intro_call_click` | Confirmed free-call booking button | Demand for an introductory call |
+| `in_person_enquiry_click` | Email or future booking button | In-person coaching intent |
+| `book_click` | Amazon button | Book purchase intent, not a confirmed sale |
+
+Use UTMs on campaigns that Andy controls—Instagram bio, Facebook, YouTube, email and paid promotions—using a short naming convention such as `utm_source=instagram`, `utm_medium=social`, `utm_campaign=free_assessment`. Do not add UTMs to ordinary internal links. Preserve Google Search Console as the source for search queries, impressions, clicks and landing pages; GA4 is the source for on-site journeys.
+
+For completed assessments and paid subscribers, first ask Skillest whether it supports coach analytics, conversion exports, webhooks, pixels or an approved API, and whether it preserves inbound campaign parameters. If it does not, keep a monthly aggregate record: completed free assessments, new paid subscribers, cancellations and active subscribers. Compare trends with website clicks without claiming person-level attribution. This is privacy-light and honest about the limits.
+
+### Simple dashboard for the 50-subscriber goal
+
+Use one Looker Studio page connected to GA4 and Search Console, plus a small monthly aggregate sheet populated from Skillest reports if Skillest provides no direct connection. Show:
+
+- website users and sessions;
+- Google organic, social, direct and campaign traffic;
+- free-assessment clicks and click-through rate;
+- paid-coaching clicks by offer;
+- completed assessments, new subscribers, cancellations and active subscribers, labelled by data source;
+- progress to 50 active subscribers;
+- month-over-month trend and the top landing pages.
+
+Keep “website click”, “completed assessment” and “paid subscriber” as separate stages. A useful funnel is: sessions → free-assessment clicks → completed assessments → new subscribers → active subscribers. Only calculate later-stage conversion rates when the Skillest figures cover the same date range and are reliable.
+
+## 15. Approval sequence
+
+No tracking or link changes have been implemented in this round. The safe order is: Andrew confirms the live Skillest offers, assessment, call and social destinations; checks whether GA4/Search Console properties already exist; decides whether to proceed with privacy-conscious GA4; and asks Skillest what completion/subscription reporting it officially supports. After those answers, implement the link corrections and one tracking setup together, test once on a phone and desktop, and verify events in GA4 DebugView before relying on the dashboard.
