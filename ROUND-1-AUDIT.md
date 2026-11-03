@@ -176,15 +176,21 @@ Place a compact proof strip after the hero and before “How online coaching wor
 
 Accessible labels should be used instead of relying on emoji alone. On failure, hide the numeric items and keep the profile link. Do not show followers unless there is a clear business reason; reviews and lessons are stronger buying signals.
 
-## 11. Recommended next three implementation tasks
+## 11. Proposed Round 1 changes
 
-1. Correct and standardise the facts and brand: 23 years, international background, complete-coach positioning, venue name, About SEO, navigation and footers.
-2. Retire the paused Club sign-up experience and remove conflicting/outdated identity and customer-data collection.
-3. Contact Skillest for an official API/widget decision; meanwhile add a premium non-numeric link to current Skillest proof near the top of the homepage. Add dated figures only if Andrew wants a manually reviewed snapshot.
+Implement in this order after Andrew approves the scope:
 
-These are deliberately contained changes. Image optimisation, visible FAQs, new search pages and any server-side statistics service can follow in later rounds.
+1. **Correct the core facts:** change 22/22+ years to 23 years, add the UK/Ireland/New Zealand background, use the full venue name and remove or confirm unsupported claims.
+2. **Clarify the brand and routes:** standardise navigation, footers and page wording around Andy Plester Golf; keep online coaching and the free assessment as the main journey.
+3. **Retire the paused Club sign-up:** replace its waiting-list form with a paused notice and links to current coaching, the short-game system and the book. This also removes its four broken links and stops unnecessary data collection.
+4. **Add honest Skillest proof:** add a prominent direct link to current reviews and coaching activity. Use live figures only through an official Skillest method; otherwise use a dated snapshot only if Andrew wants one.
+5. **Fix the highest-value destinations:** verify the free assessment and three plan links while signed out, then add the confirmed introductory-call, venue and social links where appropriate.
+6. **Measure the conversion journey:** if Andrew chooses GA4, install one privacy-conscious setup, update the privacy page and track the small event set in section 14. Keep website clicks separate from confirmed Skillest assessments and subscribers.
+7. **Improve speed and search presentation:** optimise the hero image, correct About and Privacy titles/identity, and add short visible FAQs to Home and Coaching.
 
-## 12. Task 3 — complete link audit
+Round 1 should stop after these contained changes have been tested on a phone and desktop. New search-content pages, a reporting dashboard and any server-side Skillest service should wait for the results and official access information.
+
+## 12. Link and tracking audit — complete link audit
 
 This audit checked every `href` in the seven HTML pages, including file destinations and same-page/cross-page anchors. External destinations could not be loaded from this workspace because public DNS access is unavailable, so the findings distinguish a correct-looking destination from a live, mobile-tested destination. A final phone test remains necessary before publication.
 
@@ -216,7 +222,7 @@ All internal file links resolve. Four links on `up-and-down-club.html` are broke
 3. Retire or simplify the paused Club page and stop its form from collecting new waiting-list details, subject to Andrew's approval.
 4. Add consistent shared-footer links after the destinations are verified, then repair the Club page's four broken anchors if that page remains public.
 
-## 13. Tracking, forms and conversion assessment
+## 13. Link and tracking audit — tracking, forms and conversion assessment
 
 ### Current state
 
@@ -261,6 +267,17 @@ Use one Looker Studio page connected to GA4 and Search Console, plus a small mon
 
 Keep “website click”, “completed assessment” and “paid subscriber” as separate stages. A useful funnel is: sessions → free-assessment clicks → completed assessments → new subscribers → active subscribers. Only calculate later-stage conversion rates when the Skillest figures cover the same date range and are reliable.
 
-## 15. Approval sequence
+## 15. Questions or approvals required
 
-No tracking or link changes have been implemented in this round. The safe order is: Andrew confirms the live Skillest offers, assessment, call and social destinations; checks whether GA4/Search Console properties already exist; decides whether to proceed with privacy-conscious GA4; and asks Skillest what completion/subscription reporting it officially supports. After those answers, implement the link corrections and one tracking setup together, test once on a phone and desktop, and verify events in GA4 DebugView before relying on the dashboard.
+No tracking, integration or link changes have been implemented in this audit. Before Round 1 begins, Andrew needs to answer:
+
+1. **Club page:** may the paused Club waiting-list form be removed and replaced with a simple paused notice?
+2. **Skillest offers:** are the free assessment, $49 review, $89/month plan and $199/month plan still current, including the stated lesson allowances and terms?
+3. **Skillest access:** will Andrew ask Skillest support for an official review/lesson-count API, widget or permitted feed, plus completion/subscription reporting? Any documentation or embed code they provide will be needed before implementation.
+4. **Displayed proof:** while official access is being investigated, should the homepage use only a direct Skillest proof link, or also show the supplied figures as a clearly dated snapshot?
+5. **Rating:** what star rating does the live Skillest profile show, and how many reviews is it based on? Do not display a rating until both can be verified from Skillest.
+6. **Tracking:** does Andrew want privacy-conscious GA4 conversion tracking, and does he already own GA4 and Search Console properties for this domain? A GA4 measurement ID is required; no password or account access should be supplied.
+7. **Destinations:** what are the confirmed introductory-call booking URL, TikTok profile (if any) and stable Google Maps venue link?
+8. **Credentials:** should “TaylorMade Ambassador” remain on the site? It needs Andrew's confirmation because it was not established by the supplied Round 1 material.
+
+Once these answers are available, the Round 1 checklist in section 11 can be implemented and tested without guessing. External scripts or embeds for Skillest or analytics may also need to be allowed by the site's existing security policy before a browser can load them.
