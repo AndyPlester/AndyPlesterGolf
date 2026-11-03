@@ -254,7 +254,7 @@ strong{color:var(--ink)}
 
 /* ---------- trust bar ---------- */
 .skillest-proof{padding:1.4rem 0;background:var(--bg)}
-.skillest-proof-inner{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:46rem;margin:0 auto}
+.skillest-proof-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;max-width:64rem;margin:0 auto}
 .skillest-stat{display:flex;align-items:center;justify-content:center;gap:.8rem;min-width:0;padding:1rem;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
 .skillest-stat:hover{border-color:var(--green-line);box-shadow:var(--shadow);text-decoration:none}
@@ -264,7 +264,7 @@ strong{color:var(--ink)}
 .skillest-stat strong+span{display:block;margin-top:.25rem;color:var(--ink);font-size:.8rem;font-weight:700}
 .skillest-proof-note{grid-column:1/-1;margin:0;text-align:center;color:var(--ink-faint);font-size:.72rem}
 .skillest-proof-note a{color:var(--green);font-weight:700;text-decoration:underline;text-underline-offset:2px}
-@media(max-width:520px){
+@media(max-width:700px){
   .skillest-proof-inner{grid-template-columns:1fr}
   .skillest-proof-note{grid-column:auto}
 }
@@ -393,6 +393,17 @@ strong{color:var(--ink)}
 .quote cite{font-style:normal;font-weight:700;color:var(--ink);font-size:.88rem}
 .quote .stars{color:var(--gold);font-size:.85rem;letter-spacing:.1em;margin-bottom:.6rem}
 .results-note{margin-top:1.5rem;font-size:.9rem;color:var(--ink-faint);text-align:center}
+.skillest-reviews{background:linear-gradient(180deg,var(--panel),var(--bg))}
+.results-grid--three{max-width:68rem;margin-inline:auto}
+.quote cite span{color:var(--ink-faint);font-weight:600}
+.reviews-link{text-align:center;margin:1.6rem 0 0}
+.reviews-link a{color:var(--green);font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.reviews-cta{max-width:52rem;margin:2.5rem auto 0;padding:clamp(1.6rem,4vw,2.5rem);text-align:center;
+  background:var(--green-deep);color:var(--on-dark);border:1px solid rgba(200,169,81,.45);border-radius:var(--radius-l);box-shadow:var(--shadow)}
+.reviews-cta h3{color:#fff;font-size:clamp(1.45rem,3vw,2rem);margin:0 0 .7rem}
+.reviews-cta p{max-width:42rem;margin:0 auto 1.4rem;color:var(--on-dark-soft)}
+@media(min-width:900px){.results-grid.results-grid--three{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.reviews-cta .btn{width:100%}}
 
 /* ---------- about ---------- */
 .about-grid{display:grid;gap:2.5rem;align-items:center;grid-template-columns:1fr}
