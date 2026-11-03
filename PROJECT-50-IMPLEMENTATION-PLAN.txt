@@ -15,7 +15,7 @@ WORK THAT CAN BE COMPLETED NOW
 - Keep the book visible as evidence of Andy’s expertise and move the full four-stage short-game framework to its own page.
 
 2. Content and search
-- Use one consistent fact block: Andy Plester is a PGA Professional with 22+ years of coaching experience, a golf author and TaylorMade Ambassador. He coaches online worldwide and in person at Ullesthorpe Court Golf Club in Leicestershire.
+- Use one consistent fact block: Andy Plester is a PGA Professional with 23 years of PGA coaching experience, a golf author and TaylorMade Ambassador. He coaches online worldwide and in person at Ullesthorpe Court Golf Club in Leicestershire.
 - Keep page titles, descriptions, social sharing information, structured information, sitemap.xml and llms.txt current.
 - Add plain-language answers to common questions about online coaching.
 
