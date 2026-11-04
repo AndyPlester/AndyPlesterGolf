@@ -420,11 +420,26 @@ strong{color:var(--ink)}
 .faq-list p{margin:0;padding:0 0 1.15rem;color:var(--ink-soft)}
 .faq-list a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:520px){
+  .coaching-value{padding-bottom:2.75rem}
+  .coaching-value .section-head{margin-bottom:1.5rem}
+  .coaching-value .benefit-grid{margin-top:1.5rem;gap:.75rem}
+  .coaching-value .benefit-card{padding:1.05rem 1.1rem}
+  .plans-section{padding-top:3rem}
+  .plans-section .section-head{margin-bottom:1.65rem}
+  .plans-section .cards{gap:1rem}
+  .plans-section .featured-plan{transform:none}
   .monthly-compare{padding:1rem .7rem;margin-top:1.5rem}
   .compare-grid{font-size:.72rem}
   .compare-grid th,.compare-grid td{padding:.65rem .35rem}
   .compare-grid thead th{font-size:.7rem}
   .compare-actions .btn{min-height:2.75rem;font-size:.74rem}
+  .plans-section + .section{padding:3.25rem 0}
+  .plans-section + .section .section-head{margin-bottom:1.5rem}
+  .plans-section + .section .steps.steps--four{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem .8rem;margin-top:1.5rem;max-width:30rem}
+  .plans-section + .section .step-icon{width:3.8rem;height:3.8rem;margin-bottom:.75rem}
+  .plans-section + .section .step-icon svg{width:23px;height:23px}
+  .plans-section + .section .step h3{font-size:.92rem;margin-bottom:.3rem}
+  .plans-section + .section .step p{font-size:.78rem;line-height:1.45}
 }
 
 /* ---------- four stages (dark showcase) ---------- */
