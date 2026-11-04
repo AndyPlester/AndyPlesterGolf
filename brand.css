@@ -510,8 +510,9 @@ strong{color:var(--ink)}
 .about-photo{display:flex;justify-content:center}
 .about-photo .media-frame{width:100%;max-width:21rem;aspect-ratio:4/5}
 .about-photo .media-frame img{object-position:center 18%}
-.about-body p{font-size:1.1rem;color:var(--ink-soft)}
+.about-body p{font-size:1.1rem;color:var(--ink-soft);margin-bottom:1.15rem}
 .about-body .btn{margin-top:.6rem}
+@media(max-width:759px){#about.section{padding-bottom:2.75rem}}
 
 /* ---------- socials ---------- */
 .social-grid{display:grid;gap:1rem;grid-template-columns:1fr;margin-top:.5rem}
