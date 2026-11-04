@@ -398,6 +398,11 @@ strong{color:var(--ink)}
 .compare-grid td span{color:var(--ink-faint);font-size:.72rem}
 .compare-actions td{background:var(--panel)}
 .compare-actions .btn{width:100%;padding:.7rem .4rem;font-size:.8rem}
+.one-off-prompt{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:1.25rem;padding:1.35rem 1.5rem;border:1px solid rgba(191,151,75,.35);border-radius:var(--radius);background:linear-gradient(135deg,#fff 0%,#f8f4ea 100%);box-shadow:var(--shadow-sm)}
+.one-off-prompt div{max-width:44rem}
+.one-off-prompt h3{margin:0 0 .35rem;color:var(--green-deep);font-size:1.15rem}
+.one-off-prompt p{margin:0;color:var(--ink-soft);font-size:.9rem;line-height:1.6}
+.one-off-prompt .btn{flex:0 0 auto;text-align:center}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .coaching-value{background:linear-gradient(180deg,var(--bg),var(--green-tint))}
 .benefit-grid{display:grid;grid-template-columns:1fr;gap:1rem;max-width:70rem;margin:2.5rem auto 0}
@@ -433,6 +438,8 @@ strong{color:var(--ink)}
   .compare-grid th,.compare-grid td{padding:.65rem .35rem}
   .compare-grid thead th{font-size:.7rem}
   .compare-actions .btn{min-height:2.75rem;font-size:.74rem}
+  .one-off-prompt{display:block;padding:1.15rem;text-align:center}
+  .one-off-prompt .btn{width:100%;margin-top:1rem}
   .plans-section + .section{padding:3.25rem 0}
   .plans-section + .section .section-head{margin-bottom:1.5rem}
   .plans-section + .section .steps.steps--four{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem .8rem;margin-top:1.5rem;max-width:30rem}
