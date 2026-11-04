@@ -11,6 +11,19 @@
   onScroll();
 })();
 
+// Mark the current page in both navigation menus.
+(function () {
+  var file = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".nav-link, .mobile-link").forEach(function (link) {
+    var href = (link.getAttribute("href") || "").split("#")[0];
+    if (!href) return;
+    var linkFile = href.split("/").pop() || "index.html";
+    if (linkFile === file || (file === "" && linkFile === "index.html")) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+})();
+
 // Mobile menu
 (function () {
   var header = document.querySelector(".site-header");
@@ -58,7 +71,9 @@
       var target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      var top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+      var header = document.querySelector(".site-header");
+      var offset = header ? header.getBoundingClientRect().height + 16 : 76;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top: top, behavior: reduce ? "auto" : "smooth" });
       if (history.replaceState) history.replaceState(null, "", id);
     });
