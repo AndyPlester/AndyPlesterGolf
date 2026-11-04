@@ -25,8 +25,8 @@ Checked in preview on 4 November 2026. No changes were published.
 
 - Free Golf Assessment → `https://skillest.com/coach/andyplester#evaluation`
 - Personal Golf Review → `https://skillest.com/coach/andyplester#package-NYbRpT5sR65aeDj5v`
-- Performance Coaching → `https://skillest.com/coach/andyplester#plan-ESWcXmhJSN8nLbb2G`
-- Elite Performance Coaching → `https://skillest.com/coach/andyplester#plan-GfDfyPRKSPhj6cGip`
+- Performance Coaching → `https://skillest.com/coach/andyplester#plan-GfDfyPRKSPhj6cGip`
+- Elite Performance Coaching → `https://skillest.com/coach/andyplester#plan-ESWcXmhJSN8nLbb2G`
 - Free Confidence Call → `https://skillest.com/coach/andyplester#con-iLdzrfHPYNPqDiDDv`
 - Book purchase → `https://www.amazon.co.uk/dp/B0H3FBJCKP`
 - All internal page, image, stylesheet and script destinations resolve in the preview.
