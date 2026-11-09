@@ -11,6 +11,7 @@ Primary visitor journey: discover Andy, understand personalised online coaching,
 Key pages:
 - Home: https://andyplestergolf.com/
 - Online coaching: https://andyplestergolf.com/coaching.html
+- Free golf assessment: https://andyplestergolf.com/free-golf-assessment
 - About Andy: https://andyplestergolf.com/about.html
 - The Up & Down System: https://andyplestergolf.com/up-and-down-system.html
 - The Up & Down Game: https://andyplestergolf.com/book.html
