@@ -136,3 +136,21 @@
     el.insertAdjacentElement("afterend", note);
   });
 })();
+
+// Prepare free-assessment outbound clicks for GA4. This records to the shared
+// data layer when present, but deliberately does not install another analytics tag.
+(function () {
+  var links = document.querySelectorAll("[data-assessment-click]");
+  if (!links.length) return;
+  links.forEach(function (link) {
+    link.addEventListener("click", function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "free_assessment_click",
+        assessment_cta_location: link.getAttribute("data-assessment-click"),
+        link_url: link.href,
+        link_text: (link.textContent || "").trim()
+      });
+    });
+  });
+})();
