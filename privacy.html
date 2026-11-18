@@ -2,6 +2,21 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Security-Policy" data-desk="site-policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com/gtag/js; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://i.ytimg.com; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; form-action 'self' https://api.web3forms.com https://andyplestergolf.com; object-src 'none'; base-uri 'self'; worker-src 'none'; manifest-src 'self'">
+  <script>
+    window.enableGoogleAnalytics = function () {
+      if (window.googleAnalyticsLoaded) return;
+      window.googleAnalyticsLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-MDRBPBXDRX');
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-MDRBPBXDRX';
+      document.head.appendChild(script);
+    };
+    try { if (localStorage.getItem('apg-cookie-choice') === 'accept') window.enableGoogleAnalytics(); } catch (e) {}
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Andy Plester Golf</title>
@@ -67,7 +82,7 @@
   <main class="legal">
     <a href="index.html" class="back">← Back to home</a>
     <h1>Privacy Policy</h1>
-    <p><strong>Last updated:</strong> 2 November 2026</p>
+    <p><strong>Last updated:</strong> 18 November 2026</p>
     <p>Andy Plester Golf (“we”, “our”, or “us”) is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your information when you use our website or services.</p>
 
     <h2>Information we collect</h2>
@@ -91,10 +106,10 @@
     <p>We do not sell your personal information. We may share it only where necessary with service providers who assist us (e.g. email or hosting), or if required by law.</p>
 
     <h2>Cookies and similar technologies</h2>
-    <p>Our website may use cookies or similar technologies to improve your experience (e.g. remembering preferences or analysing site use). You can adjust your browser settings to limit or block cookies.</p>
+    <p>We use a cookie or similar browser storage to remember whether you accepted or declined website analytics. Google Analytics is only loaded if you press Accept on the cookie banner. You can also adjust your browser settings to limit or block cookies.</p>
 
     <h2>Website analytics</h2>
-    <p>Website analytics are not currently active. We will update this policy before adding analytics or other visitor tracking.</p>
+    <p>If you accept analytics, this website uses Google Analytics 4 to help us understand how visitors use the site. Google may collect information such as pages visited, approximate location, device and browser details; if you decline, Google Analytics is not loaded.</p>
 
     <h2>Data retention and security</h2>
     <p>We keep your data only for as long as needed for the purposes above or as required by law. We take reasonable steps to protect your information from unauthorised access or loss.</p>

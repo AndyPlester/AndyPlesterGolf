@@ -2,6 +2,21 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Security-Policy" data-desk="site-policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com/gtag/js; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://i.ytimg.com; media-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; form-action 'self' https://api.web3forms.com https://andyplestergolf.com; object-src 'none'; base-uri 'self'; worker-src 'none'; manifest-src 'self'">
+  <script>
+    window.enableGoogleAnalytics = function () {
+      if (window.googleAnalyticsLoaded) return;
+      window.googleAnalyticsLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-MDRBPBXDRX');
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-MDRBPBXDRX';
+      document.head.appendChild(script);
+    };
+    try { if (localStorage.getItem('apg-cookie-choice') === 'accept') window.enableGoogleAnalytics(); } catch (e) {}
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Short Game Golf Coaching | Andy Plester</title>

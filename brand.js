@@ -1,5 +1,33 @@
 /* Andy Plester Golf — shared site behaviour */
 
+// Ask before loading optional website analytics, and remember the choice.
+(function () {
+  var choice = null;
+  try { choice = localStorage.getItem("apg-cookie-choice"); } catch (e) {}
+  if (choice === "accept" || choice === "decline") return;
+
+  var banner = document.createElement("section");
+  banner.className = "privacy-banner";
+  banner.setAttribute("role", "region");
+  banner.setAttribute("aria-label", "Cookie choices");
+  banner.innerHTML = '<p>We use optional Google Analytics cookies to understand how the site is used. <a href="privacy.html">Privacy policy</a></p>' +
+    '<div class="pb-actions"><button type="button" class="btn btn-ghost on-dark btn-sm" data-cookie-decline>Decline</button>' +
+    '<button type="button" class="btn btn-gold btn-sm" data-cookie-accept>Accept</button></div>';
+  document.body.appendChild(banner);
+
+  function save(value) {
+    try { localStorage.setItem("apg-cookie-choice", value); } catch (e) {}
+    banner.hidden = true;
+  }
+  banner.querySelector("[data-cookie-accept]").addEventListener("click", function () {
+    save("accept");
+    if (window.enableGoogleAnalytics) window.enableGoogleAnalytics();
+  });
+  banner.querySelector("[data-cookie-decline]").addEventListener("click", function () {
+    save("decline");
+  });
+})();
+
 // Header background on scroll
 (function () {
   var header = document.querySelector(".site-header");

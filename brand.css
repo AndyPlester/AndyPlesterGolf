@@ -568,6 +568,12 @@ strong{color:var(--ink)}
 .privacy-banner p{margin:0;font-size:.84rem;flex:1;min-width:220px;line-height:1.5}
 .privacy-banner a{color:var(--gold);text-decoration:underline}
 .privacy-banner .pb-actions{display:flex;gap:1rem;align-items:center;flex-shrink:0}
+@media(max-width:560px){
+  .privacy-banner{padding:.85rem 1rem 1rem;gap:.75rem}
+  .privacy-banner p{font-size:.78rem;min-width:100%}
+  .privacy-banner .pb-actions{width:100%;gap:.65rem}
+  .privacy-banner .pb-actions .btn{flex:1}
+}
 
 /* ---------- reveal + motion ---------- */
 /* hidden state only applies when JS is active (html.js) so no-JS users see everything */
