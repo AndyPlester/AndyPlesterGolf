@@ -198,23 +198,27 @@ window.enableMetaPixel = function () {
   });
 })();
 
-// Prepare free-assessment outbound clicks for GA4. This records to the shared
-// data layer when present, but deliberately does not install another analytics tag.
+// Record free-assessment outbound clicks once, after optional tracking consent.
+// A click is deliberately not labelled as a completed lead: completion happens
+// on Skillest and needs a separate Skillest-side event or confirmation page.
 (function () {
-  var links = document.querySelectorAll("[data-assessment-click]");
+  var links = document.querySelectorAll('a[href*="skillest.com/coach/andyplester#evaluation"]');
   if (!links.length) return;
-  links.forEach(function (link) {
+  var page = (window.location.pathname.split("/").pop() || "home").replace(/\.html$/, "");
+  links.forEach(function (link, index) {
+    var location = link.getAttribute("data-assessment-click") || page + "-cta-" + (index + 1);
+    link.setAttribute("data-assessment-click", location);
     link.addEventListener("click", function () {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "free_assessment_click",
-        assessment_cta_location: link.getAttribute("data-assessment-click"),
+      var details = {
+        assessment_cta_location: location,
         link_url: link.href,
         link_text: (link.textContent || "").trim()
-      });
-      if (link.classList.contains("assessment-main-cta") &&
-          window.metaPixelLoaded && window.fbq) {
-        window.fbq("track", "Lead");
+      };
+      if (window.googleAnalyticsLoaded && window.gtag) {
+        window.gtag("event", "free_assessment_click", details);
+      }
+      if (window.metaPixelLoaded && window.fbq) {
+        window.fbq("trackCustom", "FreeAssessmentClick", details);
       }
     });
   });
