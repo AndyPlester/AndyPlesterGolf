@@ -1,19 +1,41 @@
 /* Andy Plester Golf — shared site behaviour */
 
+// Load the Meta pixel only after the visitor accepts optional cookies.
+window.enableMetaPixel = function () {
+  if (window.metaPixelLoaded) return;
+  window.metaPixelLoaded = true;
+  !function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = "2.0";
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = true;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+  window.fbq("init", "1463245512566089");
+  window.fbq("track", "PageView");
+};
+
 // Ask before loading optional website analytics, and remember the choice.
 (function () {
   var choice = null;
   try { choice = localStorage.getItem("apg-cookie-choice"); } catch (e) {}
-  if (choice === "accept" || choice === "decline") return;
 
   var banner = document.createElement("section");
   banner.className = "privacy-banner";
   banner.setAttribute("role", "region");
   banner.setAttribute("aria-label", "Cookie choices");
-  banner.innerHTML = '<p>We use optional Google Analytics cookies to understand how the site is used. <a href="privacy.html">Privacy policy</a></p>' +
+  banner.innerHTML = '<p>We use optional Google Analytics and Meta cookies to understand how the site is used and whether adverts work. <a href="privacy.html">Privacy policy</a></p>' +
     '<div class="pb-actions"><button type="button" class="btn btn-ghost on-dark btn-sm" data-cookie-decline>Decline</button>' +
     '<button type="button" class="btn btn-gold btn-sm" data-cookie-accept>Accept</button></div>';
   document.body.appendChild(banner);
+  banner.hidden = choice === "accept" || choice === "decline";
 
   function save(value) {
     try { localStorage.setItem("apg-cookie-choice", value); } catch (e) {}
@@ -22,10 +44,21 @@
   banner.querySelector("[data-cookie-accept]").addEventListener("click", function () {
     save("accept");
     if (window.enableGoogleAnalytics) window.enableGoogleAnalytics();
+    window.enableMetaPixel();
   });
   banner.querySelector("[data-cookie-decline]").addEventListener("click", function () {
     save("decline");
+    if (window.metaPixelLoaded || window.googleAnalyticsLoaded) window.location.reload();
   });
+  document.querySelectorAll("[data-cookie-choices]").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      banner.hidden = false;
+      banner.querySelector("[data-cookie-decline]").focus();
+    });
+  });
+
+  if (choice === "accept") window.enableMetaPixel();
 })();
 
 // Header background on scroll
@@ -179,6 +212,10 @@
         link_url: link.href,
         link_text: (link.textContent || "").trim()
       });
+      if (link.classList.contains("assessment-main-cta") &&
+          window.metaPixelLoaded && window.fbq) {
+        window.fbq("track", "Lead");
+      }
     });
   });
 })();
